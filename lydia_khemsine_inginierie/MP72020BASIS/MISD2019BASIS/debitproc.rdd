@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<SdlFSMDiagram language="sdl" type="prcd" is_extract="FALSE" is_temporary="FALSE">
+<SdlFSMPartition name="" needs_cleanup="FALSE">
+<SdlFSMSymbol identifier="SYM3" type="sdlText" text="FPAR
+IN tp INTEGER,
+IN nb INTEGER;
+DCL credit INTEGER;" outline_color="-" background_color="-" center_coordinates="168 93" dimensions="152 80" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="467 129">
+<SdlFSMSymbol identifier="SYM1" type="sdlPrcdStart" outline_color="-" background_color="-" center_coordinates="522 144" dimensions="60 30" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM2" type="sdlTask" text="credit:=tp*nb" outline_color="-" background_color="-" center_coordinates="522 191" dimensions="110 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM4" type="sdlSendSig" text="debitreceipt" outline_color="-" background_color="-" center_coordinates="522 243" dimensions="104 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM5" type="sdlPrcdReturn" text="credit" outline_color="-" background_color="-" center_coordinates="522 289" dimensions="28 28" attached_symbol_id=""/>
+</Transition>
+</NonStateTransition>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="1.0" bottomMargin="1.0" leftMargin="1.0" rightMargin="1.0" pageFooter="TRUE" scaleFactor="1.0"/>
+</SdlFSMPartition>
+</SdlFSMDiagram>

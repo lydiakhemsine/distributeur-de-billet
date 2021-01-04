@@ -1,0 +1,12 @@
+module TTCN_CControlPart {
+
+  import from TTCN_TestsAndControl all;
+
+
+  control
+    {
+    execute(TC_3A());
+    execute(TC_3b());
+    execute(TC_test());
+    }
+  }

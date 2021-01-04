@@ -1,0 +1,70 @@
+module TTCN_TestsAndControl
+  {
+  import from TTCN_Declarations all;
+
+  import from TTCN_Templates all;
+
+
+  altstep RTDS_fail() runs on runsOn_atmsys
+    {
+    []cardchan.receive
+      {
+      setverdict(fail, "Fail in default altstep!");
+      stop;
+      };
+    }
+
+  testcase TC_3A() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_3AMSG1);
+    cardchan.send(insertcode_3AMSG2);
+    cardchan.send(debit_3AMSG3);
+    cardchan.receive(debitamount_3AMSG4);
+    cardchan.send(a10_3AMSG5);
+    cardchan.send(numberbanknotes_3AMSG6);
+    cardchan.receive(bknote10_3AMSG7);
+    cardchan.receive(bknote10_3AMSG7);
+    cardchan.receive(debitreceipt_3AMSG9);
+    cardchan.receive(OKop_3AMSG10);
+    cardchan.send(cancelop_3AMSG11);
+    cardchan.receive(cancelopquestion_3AMSG12);
+    cardchan.send(OKcancel_3AMSG13);
+    cardchan.receive(returncard_3AMSG14);
+    setverdict(pass);
+    }
+
+  testcase TC_3b() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_3AMSG1);
+    cardchan.send(insertcode_3AMSG2);
+    cardchan.send(debit_3AMSG3);
+    cardchan.receive(debitamount_3AMSG4);
+    cardchan.send(a50_3bMSG5);
+    cardchan.send(numberbanknotes_3bMSG6);
+    cardchan.receive(debitreceipt_3AMSG9);
+    cardchan.receive(OKop_3AMSG10);
+    setverdict(pass);
+    }
+
+  testcase TC_test() runs on runsOn_atmsys system atmsys
+    {
+    activate(RTDS_fail());
+    map(self:cardchan, system:cardchan);
+    cardchan.send(insertcard_3AMSG1);
+    cardchan.send(insertcode_testMSG2);
+    cardchan.receive(errorcode_testMSG3);
+    cardchan.send(insertcode_3AMSG2);
+    setverdict(pass);
+    }
+
+  control
+    {
+    execute(TC_3A());
+    execute(TC_3b());
+    execute(TC_test());
+    }
+  }

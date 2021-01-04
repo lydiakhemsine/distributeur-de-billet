@@ -1,0 +1,30 @@
+module TTCN_Templates {
+
+  import from TTCN_Declarations all;
+
+  template errorcode errorcode_testMSG3 := ?;
+  template OKop OKop_3AMSG10 := ?;
+  template a10 a10_3AMSG5 := ?;
+  template insertcode insertcode_3AMSG2 := {
+    param1 := 1234
+  };
+  template insertcode insertcode_testMSG2 := {
+    param1 := 0
+  };
+  template numberbanknotes numberbanknotes_3AMSG6 := {
+    param1 := 2
+  };
+  template numberbanknotes numberbanknotes_3bMSG6 := {
+    param1 := 1
+  };
+  template OKcancel OKcancel_3AMSG13 := ?;
+  template bknote10 bknote10_3AMSG7 := ?;
+  template cancelop cancelop_3AMSG11 := ?;
+  template returncard returncard_3AMSG14 := ?;
+  template cancelopquestion cancelopquestion_3AMSG12 := ?;
+  template a50 a50_3bMSG5 := ?;
+  template debitreceipt debitreceipt_3AMSG9 := ?;
+  template debit debit_3AMSG3 := ?;
+  template insertcard insertcard_3AMSG1 := ?;
+  template debitamount debitamount_3AMSG4 := ?;
+}

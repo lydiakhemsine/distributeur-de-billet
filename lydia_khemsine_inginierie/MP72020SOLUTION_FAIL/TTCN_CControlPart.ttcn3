@@ -1,0 +1,13 @@
+module TTCN_CControlPart {
+
+  import from TTCN_TestsAndControl all;
+
+
+  control
+    {
+    execute(TC_Tr1());
+    execute(TC_Tr2());
+    execute(TC_essaicredit());
+    execute(TC_tr2d_tr3vFAIL());
+    }
+  }
